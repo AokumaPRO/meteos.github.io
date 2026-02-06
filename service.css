@@ -1,0 +1,257 @@
+/* ===== 共通 ===== */
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+/* ===== ヘッダー ===== */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  z-index: 1000;
+}
+
+.header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.header__title {
+  width: 100px;
+}
+
+.header__title img {
+  width: 100%;
+  display: block;
+}
+/*フッター*/
+.footer {
+  background: #f6f6f6;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 12px;
+}
+/*カードアニメーション*/
+.business-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.business-card.is-show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== ナビ ===== */
+.header__nav {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background: #fff;
+  transform: translateX(100%);
+  transition: 0.4s ease;
+  display: flex;
+}
+
+.header__nav.active {
+  transform: translateX(0);
+}
+
+.nav__items {
+  margin: auto;
+}
+
+.nav-items__item a {
+  display: inline-block;
+  font-size: 20px;
+  padding: 16px;
+  text-align: center;
+  position: relative;
+}
+
+/* ナビ下線アニメーション */
+.nav-items__item a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.3s ease;
+}
+
+.nav-items__item a:hover::after {
+  transform: scale(1, 1);
+}
+
+/* ===== ハンバーガー ===== */
+.header__hamburger {
+  width: 40px;
+  height: 100%;
+}
+
+.hamburger {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transition: 0.4s;
+}
+
+.hamburger span:nth-child(2) {
+  margin: 8px 0;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ===== MAIN ===== */
+main {
+  background: #f1f1f1;
+  min-height: calc(100vh - 60px);
+  padding-top: 100px;
+  padding-bottom: 90px;
+  display: flex;
+}
+
+.main {
+  margin: auto;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 16px;
+}
+
+/* ===== ビジネスカード ===== */
+.business-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding:  32px;
+}
+
+.business-card__inner {
+  display: flex;
+  align-items: flex-start;
+  gap:40px
+}
+
+/* テキスト */
+.business-card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.business-card__title {
+  font-size: 12px;
+  color: #000;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.business-card__text {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ===== ボタン（OFFICER風） ===== */
+.business-card__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #000;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 14px;
+  width: fit-content;
+  transition: opacity 0.3s;
+}
+
+.business-card__button:hover {
+  opacity: 0.8;
+}
+
+/* アイコン */
+.business-card__icon {
+  font-size: 14px;
+}
+
+/* ===== スマホ ===== */
+@media screen and (max-width: 768px) {
+  .business-card__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .business-card__button {
+    margin: 0 auto;
+  }
+}
+
+/* ===== PC ===== */
+@media screen and (min-width: 960px) {
+  .header {
+    height: 80px;
+  }
+
+  main {
+    padding-top: 120px;
+  }
+
+  .header__nav {
+    position: static;
+    transform: none;
+    height: auto;
+    width: auto;
+  }
+
+  .nav__items {
+    display: flex;
+    gap: 24px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
