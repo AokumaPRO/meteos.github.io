@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OFFICER｜株式会社メテオス</title>
+  <link rel="stylesheet" href="officer.style.css">
+</head>
+
+<body>
+
+<!-- ===== ヘッダー ===== -->
+<header class="header">
+  <div class="header__inner">
+
+    <h1 class="header__title">
+      <a href="meteos.html">
+        <img src="meteosROGO.png" alt="株式会社メテオス">
+      </a>
+    </h1>
+
+    <nav class="header__nav" id="js-nav">
+      <ul class="nav__items">
+        <li class="nav-items__item"><a href="meteos.html">STATEMENT</a></li>
+        <li class="nav-items__item"><a href="service.html">SERVICES</a></li>
+        <li class="nav-items__item"><a href="officer.html">OFFICER</a></li>
+        <li class="nav-items__item"><a href="company.html">COMPANY</a></li>
+      </ul>
+    </nav>
+
+    <button class="header__hamburger hamburger" id="js-hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main>
+  <div class="main">
+
+    <div class="profile-card officer-card" >
+      <div class="profile-card__inner">
+
+        <!-- 写真 -->
+        <div class="profile-card__image">
+          <img src="officer.jpg" alt="プロフィール写真">
+        </div>
+
+        <!-- テキスト -->
+        <div class="profile-card__content">
+          <p class="profile-card__title">株式会社メテオス 代表取締役</p>
+          <p class="profile-card__kana">フルミヤ シン</p>
+          <h2 class="profile-card__name">古宮 信</h2>
+          <p class="profile-card__text">
+            2007年、学校法人河合塾の新規事業として設立された株式会社河合塾マナビスの創業期に入社。
+            校舎長、横浜市エリアのブロック長として現場運営を経験した後、
+            フランチャイズ運営部にて関西エリアのスーパーバイザー課長、人材開発部課長を歴任。
+            2017年、社内独立制度第一号として起業。2026年現在、河合塾マナビス中山校を運営。
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+<script src="officer.js"></script>;
+<!-- ===== フッター ===== -->
+<footer class="footer">
+  © 2026 Meteos Inc.
+</footer>
+
+<script>
+const hamburger=document.getElementById('js-hamburger');
+const nav =document.getElementById('js-nav')
+
+hamburger.addEventListener('click', () =>{
+  hamburger.classList.toggle('active')
+  nav.classList.toggle('active')
+});
+</script>
+</body>
+</html>
